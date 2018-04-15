@@ -42,8 +42,9 @@ def newpost():
                 new_blog = Blog(title, content)
                 db.session.add(new_blog)
                 db.session.commit()
+                redirect_string = "/post?id=" + str(new_blog.id)
                 flash("Post successful!")
-                return redirect("/")
+                return redirect(redirect_string)
             else:
                 if len(title) == 0:
                     error += " You must include a title!"
@@ -51,6 +52,12 @@ def newpost():
                     error += " You must include a blog post!"
                 return render_template("newpost.html", error=error, content=content, title=title)
         return render_template("newpost.html")
+
+@app.route('/post', methods=['GET'])
+def post():
+    id = request.args.get("id")
+    blog = Blog.query.get(id)
+    return render_template("post.html", blog=blog)
 
 if __name__ == '__main__':
     app.run()

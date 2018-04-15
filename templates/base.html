@@ -1,14 +1,21 @@
 <html>
 <head>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style/style.css') }}">
   <title>Build-a-Blog</title>
 </head>
 <body>
+
+
   <nav>
-        <h1>Build a Blog!</h1>
+    <br>
+    <h1>Build a Blog!</h1>
     <ul>
     <li><a href="/blog">All Posts</a></li>
     <li><a href="/newpost">New Post!</a></li>
+  </nav>
+  <div class="content">
   {% block content %}
   {% endblock %}
+</div>
 </body>
 </html>

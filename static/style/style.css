@@ -1,0 +1,30 @@
+.error {
+  color: red;
+}
+
+nav {
+  background-color: blue;
+  border-radius: 15px;
+  height: 790px;
+  width: 190px;
+  float:left;
+  padding: 5px
+}
+
+.flashes{
+  background-color: yellow;
+  width: 20%;
+  height: auto;
+}
+
+.content{
+  float: right;
+  display: block;
+  margin: 10px;
+  width: 1090px;
+  height: auto;
+}
+
+a:visited {
+  color: black;
+}
